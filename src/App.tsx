@@ -1,14 +1,14 @@
 import { useEffect, useMemo } from 'react'
 import { HashRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import { BottomTabBar } from './components/BottomTabBar'
-import { EarnPage } from './pages/EarnPage'
-import { InvitePage } from './pages/InvitePage'
-import { LeaderPage } from './pages/LeaderPage'
-import { SettingsPage } from './pages/SettingsPage'
-import { UserHeader } from './components/UserHeader'
-import { HomePage } from './pages/HomePage'
-import { PredictPage } from './pages/PredictPage'
-import './App.css'
+import { BottomTabBar } from './components/bottom-tabbar'
+import { UserHeader } from './components/user-header'
+import { EarnPage } from './page/earn'
+import { HomePage } from './page/home'
+import { InvitePage } from './page/invite'
+import { LeaderPage } from './page/leader'
+import { PredictPage } from './page/predict'
+import { SettingsPage } from './page/settings'
+import styles from './App.module.scss'
 
 function AppContent() {
   const location = useLocation()
@@ -24,10 +24,10 @@ function AppContent() {
   }
 
   return (
-    <main className="page">
-      <section className="phone-shell">
+    <main className={styles.page}>
+      <section className={styles.phoneShell}>
         <UserHeader />
-        <section className="route-view">
+        <section className={styles.routeView}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/predict" element={<PredictPage />} />

@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import { NavLink } from 'react-router-dom'
+import styles from './index.module.scss'
 
 const tabs = [
   { to: '/', label: 'Home', icon: '/home.svg', end: true },
@@ -11,16 +12,16 @@ const tabs = [
 
 export function BottomTabBar() {
   return (
-    <nav className="bottom-nav">
+    <nav className={styles.bottomNav}>
       {tabs.map((tab) => (
         <NavLink
           key={tab.to}
           to={tab.to}
           end={tab.end}
-          className={({ isActive }) => (isActive ? 'active' : undefined)}
+          className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`.trim()}
         >
           <span
-            className="tab-icon"
+            className={styles.tabIcon}
             style={{ '--icon-url': `url(${tab.icon})` } as CSSProperties}
             aria-hidden="true"
           />

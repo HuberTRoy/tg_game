@@ -1,0 +1,465 @@
+.earnPage {
+  display: grid;
+  gap: 12px;
+}
+
+.sectionTitle {
+  margin: 0;
+  width: fit-content;
+  min-width: 180px;
+  padding: 10px 26px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(125deg, #5a2a25, #a03f2c 55%, #652920);
+  border: 2px solid rgb(255 224 207 / 58%);
+  clip-path: polygon(8% 0, 94% 0, 100% 50%, 94% 100%, 0 100%, 8% 50%);
+}
+
+.rewardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rewardCard {
+  min-height: 118px;
+  border-radius: 22px;
+  background: rgb(27 31 43 / 75%);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 9%),
+    0 0 22px rgb(255 33 158 / 36%);
+  padding: 18px 14px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+}
+
+.rewardCard p {
+  margin: 0;
+  font-size: 22px;
+  color: rgb(255 255 255 / 90%);
+}
+
+.rewardCard strong {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 58px;
+  line-height: 1;
+}
+
+.rewardCard strong img {
+  width: 24px;
+  height: 38px;
+  transform: rotate(22deg);
+}
+
+.taskList {
+  display: grid;
+  gap: 10px;
+}
+
+.taskRow {
+  border-radius: 22px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: rgb(27 31 43 / 58%);
+  min-height: 74px;
+  padding: 12px 18px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.taskRow p {
+  margin: 0;
+  font-size: 22px;
+}
+
+.taskRow strong {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.taskIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  font-weight: 800;
+  color: #fff;
+  background: #2fabe9;
+}
+
+.x {
+  background: transparent;
+  border-radius: 0;
+  width: auto;
+  color: #fff;
+  font-size: 56px;
+  line-height: 1;
+}
+
+.taskCheck {
+  color: #ff4d1d;
+  font-size: 56px;
+  line-height: 1;
+}
+
+.walletRow {
+  grid-template-columns: 1fr auto auto;
+}
+
+.walletIcons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.walletIcons i {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-size: 20px;
+  background: rgb(255 255 255 / 88%);
+  color: #273044;
+}
+
+.walletNote {
+  margin: -2px 2px 0;
+  color: rgb(255 255 255 / 72%);
+  font-size: 20px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 36%);
+  backdrop-filter: blur(10px);
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.emailModalCard {
+  width: min(100%, 430px);
+  border-radius: 28px;
+  padding: 20px 16px 14px;
+  background: #2a2b2f;
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 10%),
+    0 0 28px rgb(255 33 158 / 35%);
+}
+
+.emailModalCard h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 48px;
+}
+
+.emailModalCard label {
+  margin-top: 16px;
+  height: 52px;
+  border-radius: 16px;
+  border: 1px solid rgb(255 255 255 / 22%);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 10px;
+}
+
+.emailModalCard label span {
+  font-size: 24px;
+  color: rgb(255 255 255 / 84%);
+}
+
+.emailModalCard label input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 34px;
+}
+
+.emailModalCard label input::placeholder {
+  color: rgb(255 255 255 / 72%);
+}
+
+.emailError {
+  margin: 8px 6px 0;
+  color: #ff8a6c;
+  font-size: 16px;
+}
+
+.emailModalCard footer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emailModalCard footer button {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 34px;
+}
+
+.walletModalCard {
+  width: min(100%, 430px);
+  border-radius: 40px;
+  padding: 20px 20px 24px;
+  background: #2a2b2f;
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 10%),
+    0 0 28px rgb(255 33 158 / 35%);
+}
+
+.walletModalCard header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.walletModalCard h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 62px;
+}
+
+.walletClose {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 60px;
+  line-height: 1;
+}
+
+.walletOptionGrid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 36px;
+  justify-items: center;
+}
+
+.walletOption {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: rgb(255 255 255 / 90%);
+  display: grid;
+  place-items: center;
+  font-size: 52px;
+}
+
+.walletDetail {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.walletBack {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 74px;
+  line-height: 1;
+}
+
+.walletSelectedIcon {
+  justify-self: center;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: #0f5bf8;
+  display: grid;
+  place-items: center;
+  font-size: 62px;
+}
+
+.walletStatusTitle {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.walletStatusDesc {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(255 255 255 / 90%);
+}
+
+@media (max-width: 430px) {
+  .sectionTitle {
+    font-size: 20px;
+    min-width: 160px;
+    padding: 9px 20px;
+  }
+
+  .rewardCard {
+    min-height: 96px;
+    padding: 14px 10px;
+  }
+
+  .rewardCard p {
+    font-size: 14px;
+  }
+
+  .rewardCard strong {
+    font-size: 22px;
+    gap: 6px;
+  }
+
+  .rewardCard strong img {
+    width: 14px;
+    height: 24px;
+  }
+
+  .taskRow {
+    min-height: 58px;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .taskRow p {
+    font-size: 16px;
+  }
+
+  .taskRow strong {
+    font-size: 13px;
+  }
+
+  .taskIcon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .x {
+    font-size: 34px;
+  }
+
+  .taskCheck {
+    font-size: 30px;
+  }
+
+  .walletIcons {
+    gap: 4px;
+  }
+
+  .walletIcons i {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+  }
+
+  .walletNote {
+    font-size: 12px;
+  }
+
+  .emailModalCard {
+    width: min(100%, 320px);
+    border-radius: 24px;
+    padding: 18px 14px 12px;
+  }
+
+  .emailModalCard h3 {
+    font-size: 18px;
+  }
+
+  .emailModalCard label {
+    margin-top: 14px;
+    height: 44px;
+    border-radius: 14px;
+    padding: 0 12px;
+  }
+
+  .emailModalCard label span {
+    font-size: 16px;
+  }
+
+  .emailModalCard label input {
+    font-size: 13px;
+  }
+
+  .emailError {
+    margin-top: 6px;
+    font-size: 11px;
+  }
+
+  .emailModalCard footer {
+    margin-top: 12px;
+  }
+
+  .emailModalCard footer button {
+    font-size: 13px;
+  }
+
+  .walletModalCard {
+    width: min(100%, 330px);
+    border-radius: 28px;
+    padding: 14px 14px 18px;
+  }
+
+  .walletModalCard h3 {
+    font-size: 28px;
+  }
+
+  .walletClose {
+    font-size: 40px;
+  }
+
+  .walletOptionGrid {
+    margin-top: 18px;
+    gap: 14px 24px;
+  }
+
+  .walletOption {
+    width: 68px;
+    height: 68px;
+    font-size: 34px;
+  }
+
+  .walletBack {
+    font-size: 42px;
+  }
+
+  .walletSelectedIcon {
+    width: 84px;
+    height: 84px;
+    font-size: 40px;
+  }
+
+  .walletStatusTitle {
+    margin-top: 14px;
+    font-size: 22px;
+  }
+
+  .walletStatusDesc {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}

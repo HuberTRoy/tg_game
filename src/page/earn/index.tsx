@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './index.module.scss'
 
 const dailyRewards = [
   { title: 'Daily Check-In', value: '+1,000', capsule: false },
@@ -73,11 +74,7 @@ export function EarnPage() {
       return
     }
 
-    setTasks((prev) =>
-      prev.map((item) =>
-        item.id === 'email' ? { ...item, done: true, value: 'done' } : item,
-      ),
-    )
+    setTasks((prev) => prev.map((item) => (item.id === 'email' ? { ...item, done: true, value: 'done' } : item)))
     closeEmailModal()
   }
 
@@ -99,11 +96,11 @@ export function EarnPage() {
   }
 
   return (
-    <section className="earn-page">
-      <h2 className="section-title">Daily Rewards</h2>
-      <section className="reward-grid">
+    <section className={styles.earnPage}>
+      <h2 className={styles.sectionTitle}>Daily Rewards</h2>
+      <section className={styles.rewardGrid}>
         {dailyRewards.map((item) => (
-          <article key={item.title} className="reward-card">
+          <article key={item.title} className={styles.rewardCard}>
             <p>{item.title}</p>
             <strong>
               {item.value}
@@ -113,12 +110,12 @@ export function EarnPage() {
         ))}
       </section>
 
-      <h2 className="section-title">PreDEX Tasks</h2>
-      <section className="task-list">
+      <h2 className={styles.sectionTitle}>PreDEX Tasks</h2>
+      <section className={styles.taskList}>
         {tasks.map((item) => (
           <article
             key={item.id}
-            className={`task-row ${item.done ? 'done' : ''} ${item.id === 'email' ? 'clickable' : ''}`}
+            className={`${styles.taskRow} ${item.done ? styles.done : ''} ${item.id === 'email' ? styles.clickable : ''}`}
             onClick={item.id === 'email' && !item.done ? openEmailModal : undefined}
             role={item.id === 'email' && !item.done ? 'button' : undefined}
             tabIndex={item.id === 'email' && !item.done ? 0 : undefined}
@@ -131,13 +128,13 @@ export function EarnPage() {
             }
           >
             <p>{item.title}</p>
-            <span className={`task-icon ${item.icon === 'X' ? 'x' : ''}`}>{item.icon}</span>
-            {item.done ? <span className="task-check">✓</span> : <strong>{item.value}</strong>}
+            <span className={`${styles.taskIcon} ${item.icon === 'X' ? styles.x : ''}`}>{item.icon}</span>
+            {item.done ? <span className={styles.taskCheck}>✓</span> : <strong>{item.value}</strong>}
           </article>
         ))}
 
         <article
-          className="task-row wallet-row clickable"
+          className={`${styles.taskRow} ${styles.walletRow} ${styles.clickable}`}
           onClick={openWalletModal}
           role="button"
           tabIndex={0}
@@ -146,19 +143,19 @@ export function EarnPage() {
           }}
         >
           <p>Link Wallet</p>
-          <span className="wallet-icons">
+          <span className={styles.walletIcons}>
             {wallets.map((item) => (
               <i key={item}>{item}</i>
             ))}
           </span>
           <strong>Up to 1M PDX</strong>
         </article>
-        <p className="wallet-note">Waller with a higher net worth will receive a larger bonus</p>
+        <p className={styles.walletNote}>Waller with a higher net worth will receive a larger bonus</p>
       </section>
 
       {isEmailModalOpen ? (
-        <section className="email-modal-overlay" onClick={closeEmailModal}>
-          <div className="email-modal-card" onClick={(event) => event.stopPropagation()}>
+        <section className={styles.modalOverlay} onClick={closeEmailModal}>
+          <div className={styles.emailModalCard} onClick={(event) => event.stopPropagation()}>
             <h3>Link Email</h3>
             <label>
               <span>{emailStep === 'email' ? '✉' : '⚿'}</span>
@@ -169,13 +166,11 @@ export function EarnPage() {
                 placeholder={emailStep === 'email' ? 'Email' : 'Code'}
                 value={emailStep === 'email' ? email : code}
                 onChange={(event) =>
-                  emailStep === 'email'
-                    ? setEmail(event.target.value)
-                    : setCode(event.target.value.replace(/[^\d]/g, ''))
+                  emailStep === 'email' ? setEmail(event.target.value) : setCode(event.target.value.replace(/[^\d]/g, ''))
                 }
               />
             </label>
-            {errorText ? <p className="email-error">{errorText}</p> : null}
+            {errorText ? <p className={styles.emailError}>{errorText}</p> : null}
             <footer>
               <button type="button" onClick={closeEmailModal}>
                 Cancel
@@ -195,24 +190,19 @@ export function EarnPage() {
       ) : null}
 
       {isWalletModalOpen ? (
-        <section className="email-modal-overlay" onClick={closeWalletModal}>
-          <div className="wallet-modal-card" onClick={(event) => event.stopPropagation()}>
+        <section className={styles.modalOverlay} onClick={closeWalletModal}>
+          <div className={styles.walletModalCard} onClick={(event) => event.stopPropagation()}>
             {walletStep === 'list' ? (
               <>
                 <header>
                   <h3>Link Wallet</h3>
-                  <button type="button" className="wallet-close" onClick={closeWalletModal}>
+                  <button type="button" className={styles.walletClose} onClick={closeWalletModal}>
                     ×
                   </button>
                 </header>
-                <div className="wallet-option-grid">
+                <div className={styles.walletOptionGrid}>
                   {walletOptions.map((wallet) => (
-                    <button
-                      type="button"
-                      key={wallet.id}
-                      className="wallet-option"
-                      onClick={() => selectWallet(wallet)}
-                    >
+                    <button type="button" key={wallet.id} className={styles.walletOption} onClick={() => selectWallet(wallet)}>
                       <span>{wallet.icon}</span>
                     </button>
                   ))}
@@ -221,14 +211,14 @@ export function EarnPage() {
             ) : (
               <>
                 <h3>{selectedWallet?.label ?? 'Wallet'}</h3>
-                <div className="wallet-detail">
-                  <button type="button" className="wallet-back" onClick={() => setWalletStep('list')}>
+                <div className={styles.walletDetail}>
+                  <button type="button" className={styles.walletBack} onClick={() => setWalletStep('list')}>
                     ‹
                   </button>
-                  <span className="wallet-selected-icon">{selectedWallet?.icon ?? '◉'}</span>
+                  <span className={styles.walletSelectedIcon}>{selectedWallet?.icon ?? '◉'}</span>
                 </div>
-                <p className="wallet-status-title">Requesting Signature</p>
-                <p className="wallet-status-desc">Please sign to connect.</p>
+                <p className={styles.walletStatusTitle}>Requesting Signature</p>
+                <p className={styles.walletStatusDesc}>Please sign to connect.</p>
               </>
             )}
           </div>

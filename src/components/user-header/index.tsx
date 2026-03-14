@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import styles from './index.module.scss'
 
 function formatUserLabel(user?: {
   id?: number
@@ -23,13 +24,13 @@ export function UserHeader() {
   }, [])
 
   return (
-    <header className="top-bar">
-      <div className="user-chip">
-        <img className="avatar-img" src="/user.png" alt="user" />
+    <header className={styles.topBar}>
+      <div className={styles.userChip}>
+        <img className={styles.avatarImg} src="/user.png" alt="user" />
         <span>{userLabel}</span>
       </div>
-      <button className="icon-btn" type="button" aria-label="Settings" onClick={() => navigate('/settings')}>
-        <img className="settings-img" src="/Settings.png" alt="settings" />
+      <button className={styles.iconBtn} type="button" aria-label="Settings" onClick={() => navigate('/settings')}>
+        <img className={styles.settingsImg} src="/Settings.png" alt="settings" />
       </button>
     </header>
   )

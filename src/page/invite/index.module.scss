@@ -1,0 +1,291 @@
+.invitePage {
+  display: grid;
+  gap: 12px;
+}
+
+.inviteHero {
+  position: relative;
+  text-align: center;
+}
+
+.inviteHero h1 {
+  margin: 8px 0 0;
+  font-size: 64px;
+  line-height: 1.05;
+}
+
+.inviteRocket {
+  position: absolute;
+  right: 78px;
+  top: 78px;
+  font-size: 54px;
+  transform: rotate(15deg);
+}
+
+.inviteHero p {
+  margin: 16px 0 0;
+  font-size: 20px;
+  color: rgb(255 255 255 / 90%);
+}
+
+.inviteSummary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.glowCard {
+  border-radius: 20px;
+  padding: 18px 14px 14px;
+  background: rgb(28 32 44 / 72%);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 10%),
+    0 0 24px rgb(255 33 158 / 40%);
+  text-align: center;
+}
+
+.glowCard p {
+  margin: 0;
+  font-size: 20px;
+  color: rgb(255 255 255 / 85%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.glowCard p img {
+  width: 28px;
+  height: 28px;
+}
+
+.glowCard strong {
+  margin-top: 6px;
+  display: block;
+  font-size: 54px;
+  line-height: 1.05;
+}
+
+.inviteLinkRow {
+  border-radius: 20px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: rgb(27 31 43 / 58%);
+  min-height: 74px;
+  padding: 10px 12px 10px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.inviteLinkRow input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+
+.inviteLinkRow button {
+  border: 0;
+  border-radius: 10px;
+  height: 42px;
+  min-width: 74px;
+  background: rgb(255 255 255 / 14%);
+  color: #fff;
+  font-size: 16px;
+}
+
+.inviteShareRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+}
+
+.shareMain,
+.shareIcon {
+  min-height: 74px;
+  border-radius: 22px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: rgb(27 31 43 / 58%);
+  color: #fff;
+}
+
+.shareMain {
+  padding: 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.shareMain span {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #2fabe9;
+  font-weight: 700;
+}
+
+.shareIcon {
+  width: 74px;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.inviteTable {
+  border-bottom: 1px solid rgb(255 255 255 / 38%);
+  padding-bottom: 6px;
+  display: grid;
+  gap: 8px;
+}
+
+.inviteTable header,
+.inviteRow {
+  display: grid;
+  grid-template-columns: 76px 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.inviteTable header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.inviteTable header h3:last-child {
+  text-align: right;
+}
+
+.inviteRow {
+  min-height: 52px;
+  font-size: 22px;
+  font-weight: 700;
+  color: rgb(255 255 255 / 76%);
+}
+
+.inviteRow span:last-child {
+  text-align: right;
+}
+
+.inviteHow {
+  border-radius: 22px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: rgb(27 31 43 / 58%);
+  padding: 18px 16px;
+}
+
+.inviteHow h4 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.inviteHow p {
+  margin: 14px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 430px) {
+  .inviteHero h1 {
+    font-size: 26px;
+  }
+
+  .inviteRocket {
+    right: 34px;
+    top: 38px;
+    font-size: 30px;
+  }
+
+  .inviteHero p {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .glowCard p {
+    font-size: 15px;
+  }
+
+  .glowCard p img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .glowCard strong {
+    font-size: 34px;
+  }
+
+  .inviteLinkRow {
+    min-height: 58px;
+    padding: 8px 10px 8px 12px;
+  }
+
+  .inviteLinkRow input {
+    font-size: 12px;
+  }
+
+  .inviteLinkRow button {
+    height: 34px;
+    min-width: 58px;
+    font-size: 12px;
+  }
+
+  .inviteShareRow {
+    gap: 8px;
+  }
+
+  .shareMain,
+  .shareIcon {
+    min-height: 58px;
+    border-radius: 18px;
+  }
+
+  .shareMain {
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .shareMain span {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .shareIcon {
+    width: 58px;
+    font-size: 22px;
+  }
+
+  .inviteTable header,
+  .inviteRow {
+    grid-template-columns: 52px 1fr auto;
+    gap: 8px;
+  }
+
+  .inviteTable header h3 {
+    font-size: 12px;
+  }
+
+  .inviteRow {
+    min-height: 40px;
+    font-size: 12px;
+  }
+
+  .inviteHow {
+    border-radius: 16px;
+    padding: 12px;
+  }
+
+  .inviteHow h4 {
+    font-size: 12px;
+  }
+
+  .inviteHow p {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+}

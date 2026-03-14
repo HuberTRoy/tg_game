@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import styles from './index.module.scss'
 
 function formatUserLabel(user?: {
   id?: number
@@ -33,57 +34,57 @@ export function SettingsPage() {
   }
 
   return (
-    <main className="settings-screen">
-      <header className="settings-top">
-        <div className="user-chip">
-          <img className="avatar-img" src="/user.png" alt="user" />
+    <main className={styles.settingsScreen}>
+      <header className={styles.settingsTop}>
+        <div className={styles.userChip}>
+          <img className={styles.avatarImg} src="/user.png" alt="user" />
           <span>{userLabel}</span>
         </div>
-        <button type="button" className="settings-close" onClick={goBack} aria-label="Close settings">
+        <button type="button" className={styles.settingsClose} onClick={goBack} aria-label="Close settings">
           ×
         </button>
       </header>
 
       <h1>Settings</h1>
 
-      <section className="settings-list">
-        <button type="button" className="settings-row">
-          <span className="left">
+      <section className={styles.settingsList}>
+        <button type="button" className={styles.settingsRow}>
+          <span className={styles.left}>
             <i>◉</i>
             Language
           </span>
-          <span className="right">
+          <span className={styles.right}>
             {language}
             <b>⌄</b>
           </span>
         </button>
 
-        <button type="button" className="settings-row" onClick={() => setSoundEnabled((prev) => !prev)}>
-          <span className="left">
+        <button type="button" className={styles.settingsRow} onClick={() => setSoundEnabled((prev) => !prev)}>
+          <span className={styles.left}>
             <i>♫</i>
             Sound Effects
           </span>
-          <span className="right">
+          <span className={styles.right}>
             <b>{soundEnabled ? '☑' : '☐'}</b>
           </span>
         </button>
 
-        <button type="button" className="settings-row">
-          <span className="left">
+        <button type="button" className={styles.settingsRow}>
+          <span className={styles.left}>
             <i>?</i>
             How to earn PDX
           </span>
         </button>
 
-        <button type="button" className="settings-row">
-          <span className="left">
+        <button type="button" className={styles.settingsRow}>
+          <span className={styles.left}>
             <i>▭</i>
             Terms and Conditions
           </span>
         </button>
 
-        <button type="button" className="settings-row">
-          <span className="left">
+        <button type="button" className={styles.settingsRow}>
+          <span className={styles.left}>
             <i>▭</i>
             Privacy Agreement
           </span>

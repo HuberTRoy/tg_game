@@ -1,0 +1,35 @@
+.bottomNav {
+  margin: auto -16px 0;
+  padding: 10px 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(29 33 45 / 88%);
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.active {
+  color: #ff4d1d;
+}
+
+.tabIcon {
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: var(--icon-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}

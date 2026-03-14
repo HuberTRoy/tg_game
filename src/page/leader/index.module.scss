@@ -1,0 +1,153 @@
+.leaderPage {
+  display: grid;
+  gap: 14px;
+}
+
+.leaderPage h1 {
+  margin: 8px 0 6px;
+  text-align: center;
+  font-size: 58px;
+  line-height: 1.05;
+}
+
+.leaderSummary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.glowCard {
+  border-radius: 20px;
+  padding: 18px 14px 14px;
+  background: rgb(28 32 44 / 72%);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 10%),
+    0 0 24px rgb(255 33 158 / 40%);
+  text-align: center;
+}
+
+.glowCard p {
+  margin: 0;
+  font-size: 20px;
+  color: rgb(255 255 255 / 85%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.glowCard p img {
+  width: 28px;
+  height: 28px;
+}
+
+.glowCard strong {
+  margin-top: 6px;
+  display: block;
+  font-size: 54px;
+  line-height: 1.05;
+}
+
+.leaderTable {
+  border-radius: 20px;
+  padding: 14px 12px 12px;
+  background: rgb(28 32 44 / 62%);
+  border: 1px solid rgb(255 255 255 / 12%);
+}
+
+.leaderTable header,
+.row {
+  display: grid;
+  grid-template-columns: 70px 1fr 1.2fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.leaderTable header {
+  color: rgb(255 255 255 / 72%);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 4px 0 6px;
+}
+
+.leaderTable header span:last-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.leaderTable header img {
+  width: 30px;
+  height: 30px;
+}
+
+.row {
+  min-height: 52px;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(255 255 255 / 70%);
+}
+
+.row span:last-child {
+  text-align: right;
+}
+
+.highlight {
+  color: #ff6a3f;
+  text-shadow: 0 0 8px rgb(255 77 29 / 38%);
+}
+
+.dots {
+  color: rgb(255 255 255 / 55%);
+}
+
+.me {
+  color: #ff4d1d;
+}
+
+.referrer {
+  margin-top: 4px;
+}
+
+@media (max-width: 430px) {
+  .leaderPage h1 {
+    font-size: 26px;
+  }
+
+  .glowCard p {
+    font-size: 15px;
+  }
+
+  .glowCard p img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .glowCard strong {
+    font-size: 34px;
+  }
+
+  .leaderTable {
+    padding: 10px;
+  }
+
+  .leaderTable header,
+  .row {
+    grid-template-columns: 56px 1fr 1.2fr;
+    gap: 6px;
+  }
+
+  .leaderTable header {
+    font-size: 12px;
+  }
+
+  .leaderTable header img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .row {
+    min-height: 42px;
+    font-size: 18px;
+  }
+}

@@ -1,3 +1,5 @@
+import styles from './index.module.scss'
+
 const topPlayers = [
   { rank: '🏆', name: 'User-123-456', points: '999,999,999,999', highlight: true },
   { rank: '🏆', name: 'User-133-456', points: '999,999,999,90' },
@@ -14,15 +16,15 @@ const topReferrers = [
 
 export function LeaderPage() {
   return (
-    <section className="leader-page">
+    <section className={styles.leaderPage}>
       <h1>PreDex Leaderboard</h1>
 
-      <section className="leader-summary">
-        <article className="glow-card">
+      <section className={styles.leaderSummary}>
+        <article className={styles.glowCard}>
           <p>Your Rank</p>
           <strong>123</strong>
         </article>
-        <article className="glow-card">
+        <article className={styles.glowCard}>
           <p>
             PDX Points <img src="/coin.png" alt="coin" />
           </p>
@@ -30,7 +32,7 @@ export function LeaderPage() {
         </article>
       </section>
 
-      <section className="leader-table">
+      <section className={styles.leaderTable}>
         <header>
           <span>Rank</span>
           <span>Top Player</span>
@@ -41,27 +43,27 @@ export function LeaderPage() {
         </header>
 
         {topPlayers.map((item, index) => (
-          <div className={`row ${item.highlight ? 'highlight' : ''}`} key={`${item.name}-${index}`}>
+          <div className={`${styles.row} ${item.highlight ? styles.highlight : ''}`} key={`${item.name}-${index}`}>
             <span>{item.rank}</span>
             <span>{item.name}</span>
             <span>{item.points}</span>
           </div>
         ))}
 
-        <div className="row dots">
+        <div className={`${styles.row} ${styles.dots}`}>
           <span>...</span>
           <span>...</span>
           <span>.....</span>
         </div>
 
-        <div className="row me">
+        <div className={`${styles.row} ${styles.me}`}>
           <span>#123</span>
           <span>You</span>
           <span>816,558,00</span>
         </div>
       </section>
 
-      <section className="leader-table referrer">
+      <section className={`${styles.leaderTable} ${styles.referrer}`}>
         <header>
           <span>Rank</span>
           <span>Top Referrer</span>
@@ -72,7 +74,7 @@ export function LeaderPage() {
         </header>
 
         {topReferrers.map((item, index) => (
-          <div className="row" key={`${item.rank}-${index}`}>
+          <div className={styles.row} key={`${item.rank}-${index}`}>
             <span>{item.rank}</span>
             <span>{item.name}</span>
             <span>{item.points}</span>

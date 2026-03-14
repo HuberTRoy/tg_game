@@ -1,0 +1,348 @@
+.predictPage {
+  display: grid;
+  gap: 12px;
+}
+
+.predictBalance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #ffd500;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0 12px rgb(255 212 0 / 48%);
+}
+
+.coinImg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.capsuleRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.capsuleRow img {
+  width: 36px;
+  height: 56px;
+  object-fit: contain;
+  transform: rotate(-18deg);
+}
+
+.capsuleRow strong {
+  font-size: 56px;
+  color: #14e54a;
+  text-shadow: 0 0 12px rgb(20 229 74 / 40%);
+}
+
+.marketRow {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.marketRow h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #ff4d1d;
+  text-shadow: 0 0 10px rgb(255 77 29 / 52%);
+}
+
+.marketRow button {
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: 0;
+  height: 46px;
+  color: rgb(255 255 255 / 72%);
+  background: rgb(35 38 48 / 86%);
+  font-size: 22px;
+}
+
+.marketRow button.active,
+.marketRow button[class*='active'] {
+  border-color: #ff4d1d;
+  color: #ff4d1d;
+}
+
+.active {
+  border-color: #ff4d1d !important;
+  color: #ff4d1d !important;
+}
+
+.chartCard {
+  position: relative;
+  height: 400px;
+  padding: 8px 64px 42px 0;
+  border: 2px solid rgb(255 255 255 / 34%);
+  border-top: 1px solid rgb(255 255 255 / 20%);
+}
+
+.chartGrid {
+  position: absolute;
+  inset: 0 64px 42px 0;
+  background-image:
+    linear-gradient(to bottom, rgb(255 255 255 / 8%) 1px, transparent 1px),
+    linear-gradient(to right, rgb(255 255 255 / 4%) 1px, transparent 1px);
+  background-size: 100% 9%, 14% 100%;
+}
+
+.chartLine {
+  position: absolute;
+  inset: 8px 64px 42px 0;
+  width: auto;
+  height: auto;
+}
+
+.chartLine path {
+  fill: none;
+  stroke: #ff4d1d;
+  stroke-width: 0.7;
+}
+
+.chartLine circle {
+  fill: #ff4d1d;
+  filter: drop-shadow(0 0 6px #ff4d1d);
+}
+
+.yAxis {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  bottom: 42px;
+  width: 60px;
+  display: grid;
+  color: rgb(255 255 255 / 36%);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.xAxis {
+  position: absolute;
+  left: 0;
+  right: 64px;
+  bottom: 8px;
+  display: flex;
+  justify-content: space-around;
+  color: rgb(255 255 255 / 28%);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tradeResults {
+  position: absolute;
+  right: 10px;
+  bottom: 46px;
+  display: grid;
+  gap: 2px;
+}
+
+.tradeResults p {
+  margin: 0;
+  min-width: 146px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  column-gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tradeResults p img {
+  width: 16px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.win {
+  color: #14e54a;
+}
+
+.loss {
+  color: rgb(255 77 29 / 62%);
+}
+
+.volumeRow {
+  display: flex;
+  align-items: end;
+  gap: 5px;
+  height: 110px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.volumeRow span {
+  flex: 1;
+  min-width: 8px;
+  max-width: 14px;
+  border-radius: 2px;
+}
+
+.up {
+  background: #15b239;
+}
+
+.down {
+  background: #a7472e;
+}
+
+.signalText {
+  margin: 0;
+  text-align: center;
+  color: #a7472e;
+  font-size: 15px;
+}
+
+.predictCta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: end;
+}
+
+.predictCta p {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.2;
+  font-style: italic;
+  font-weight: 700;
+  color: rgb(255 255 255 / 72%);
+}
+
+.orderInfo {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+
+.orderInfo > img {
+  width: 44px;
+  height: 64px;
+  transform: rotate(24deg);
+}
+
+.orderInfo span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.orderInfo span img {
+  width: 24px;
+  height: 24px;
+}
+
+.actionButtons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.actionButtons button {
+  border-radius: 28px;
+  min-height: 106px;
+  border: 2px solid rgb(255 255 255 / 20%);
+  background: rgb(35 38 48 / 86%);
+  color: rgb(255 255 255 / 78%);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 2px;
+}
+
+.actionButtons button strong {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.actionButtons button span {
+  font-size: 14px;
+}
+
+.upAction {
+  border-color: #14e54a !important;
+  color: #14e54a !important;
+  box-shadow: 0 0 20px rgb(20 229 74 / 24%);
+}
+
+.flatAction {
+  border-color: rgb(255 255 255 / 28%) !important;
+  color: rgb(255 255 255 / 72%) !important;
+  box-shadow: 0 0 20px rgb(255 255 255 / 18%);
+}
+
+.downAction {
+  border-color: #ff4d1d !important;
+  color: #ff4d1d !important;
+  box-shadow: 0 0 20px rgb(255 77 29 / 24%);
+}
+
+.predictNote {
+  margin: 4px 0 0;
+  color: rgb(255 255 255 / 72%);
+  font-size: 14px;
+}
+
+@media (max-width: 430px) {
+  .predictBalance {
+    font-size: 32px;
+  }
+
+  .capsuleRow strong {
+    font-size: 48px;
+  }
+
+  .marketRow h2 {
+    font-size: 18px;
+  }
+
+  .marketRow button {
+    font-size: 17px;
+    height: 40px;
+  }
+
+  .chartCard {
+    height: 292px;
+    padding-right: 56px;
+  }
+
+  .yAxis {
+    width: 52px;
+    font-size: 11px;
+  }
+
+  .xAxis {
+    right: 56px;
+    font-size: 10px;
+  }
+
+  .tradeResults p {
+    min-width: 118px;
+    font-size: 16px;
+  }
+
+  .volumeRow span {
+    min-width: 6px;
+    max-width: 10px;
+  }
+
+  .predictCta p {
+    font-size: 18px;
+  }
+
+  .orderInfo span {
+    font-size: 14px;
+  }
+
+  .actionButtons button strong {
+    font-size: 24px;
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './index.module.scss'
 
 const inviteLink = 'https://t.me/123123/?referral=ABCDEFG'
 
@@ -25,23 +26,23 @@ export function InvitePage() {
   }
 
   return (
-    <section className="invite-page">
-      <section className="invite-hero">
+    <section className={styles.invitePage}>
+      <section className={styles.inviteHero}>
         <h1>
           Invite Friends and Play
           <br />
           Together
         </h1>
-        <div className="invite-rocket">🚀</div>
+        <div className={styles.inviteRocket}>🚀</div>
         <p>You get 5% of their earnings - They get bonus to start</p>
       </section>
 
-      <section className="invite-summary">
-        <article className="glow-card">
+      <section className={styles.inviteSummary}>
+        <article className={styles.glowCard}>
           <p>Your Referrals</p>
           <strong>123</strong>
         </article>
-        <article className="glow-card">
+        <article className={styles.glowCard}>
           <p>
             Bonuses <img src="/coin.png" alt="coin" />
           </p>
@@ -49,32 +50,32 @@ export function InvitePage() {
         </article>
       </section>
 
-      <section className="invite-link-row">
+      <section className={styles.inviteLinkRow}>
         <input value={inviteLink} readOnly aria-label="Invite link" />
         <button type="button" onClick={copyInviteLink}>
           {copyText}
         </button>
       </section>
 
-      <section className="invite-share-row">
-        <button type="button" className="share-main">
+      <section className={styles.inviteShareRow}>
+        <button type="button" className={styles.shareMain}>
           Share via Telegram <span>TG</span>
         </button>
-        <button type="button" className="share-icon">
+        <button type="button" className={styles.shareIcon}>
           X
         </button>
-        <button type="button" className="share-icon">
+        <button type="button" className={styles.shareIcon}>
           DS
         </button>
       </section>
 
-      <section className="invite-table">
+      <section className={styles.inviteTable}>
         <header>
           <h3>Your Top Referrals</h3>
           <h3>Bonuses</h3>
         </header>
         {topReferrals.map((item) => (
-          <div className="invite-row" key={item.rank}>
+          <div className={styles.inviteRow} key={item.rank}>
             <span>{item.rank}</span>
             <span>{item.user}</span>
             <span>{item.bonus}</span>
@@ -82,7 +83,7 @@ export function InvitePage() {
         ))}
       </section>
 
-      <section className="invite-how">
+      <section className={styles.inviteHow}>
         <h4>How it works</h4>
         <p>Invite friends and earn 5% automatically</p>
       </section>

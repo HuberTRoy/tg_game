@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import styles from './index.module.scss'
 
 const pricePoints = [88, 44, 40, 48, 60, 63, 71, 74, 56]
 const yLabels = ['102,891', '102,890', '102,889', '102,888', '102,887', '102,886', '102,885', '102,884', '102,883', '102,882', '102,881', '102,880']
@@ -47,24 +48,24 @@ export function PredictPage() {
   const path = useMemo(() => createLinePath(pricePoints), [])
 
   return (
-    <section className="predict-page">
-      <section className="predict-balance">
-        <img className="coin-img" src="/coin.png" alt="coin" />
+    <section className={styles.predictPage}>
+      <section className={styles.predictBalance}>
+        <img className={styles.coinImg} src="/coin.png" alt="coin" />
         <strong>671,218,022,563</strong>
       </section>
 
-      <section className="capsule-row">
+      <section className={styles.capsuleRow}>
         <img src="/time.png" alt="capsule" />
         <strong>300</strong>
       </section>
 
-      <section className="market-row">
+      <section className={styles.marketRow}>
         <h2>BTC/USDT</h2>
         {['1s', '15m', '1h'].map((item) => (
           <button
             key={item}
             type="button"
-            className={item === timeframe ? 'active' : undefined}
+            className={item === timeframe ? styles.active : ''}
             onClick={() => setTimeframe(item)}
           >
             {item}
@@ -72,26 +73,26 @@ export function PredictPage() {
         ))}
       </section>
 
-      <section className="chart-card">
-        <div className="chart-grid" />
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="chart-line">
+      <section className={styles.chartCard}>
+        <div className={styles.chartGrid} />
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className={styles.chartLine}>
           <path d={path} />
           <circle cx="100" cy={100 - pricePoints.at(-1)!} r="1.2" />
         </svg>
-        <div className="y-axis">
+        <div className={styles.yAxis}>
           {yLabels.map((label) => (
             <span key={label}>{label}</span>
           ))}
         </div>
-        <div className="x-axis">
+        <div className={styles.xAxis}>
           {xLabels.map((label) => (
             <span key={label}>{label}</span>
           ))}
         </div>
 
-        <div className="trade-results">
+        <div className={styles.tradeResults}>
           {historyRows.map((item, index) => (
-            <p key={`${item.result}-${index}`} className={item.up ? 'win' : 'loss'}>
+            <p key={`${item.result}-${index}`} className={item.up ? styles.win : styles.loss}>
               <span>{item.result}</span>
               <span>{item.score}</span>
               <img src={item.up ? '/time.png' : '/coin.png'} alt="icon" />
@@ -100,21 +101,21 @@ export function PredictPage() {
         </div>
       </section>
 
-      <section className="volume-row">
+      <section className={styles.volumeRow}>
         {volumeBars.map((bar, index) => (
-          <span key={index} className={bar.up ? 'up' : 'down'} style={{ height: `${bar.value * 9}px` }} />
+          <span key={index} className={bar.up ? styles.up : styles.down} style={{ height: `${bar.value * 9}px` }} />
         ))}
       </section>
 
-      <p className="signal-text">SIGNAL &gt; SELL 0.01550452</p>
+      <p className={styles.signalText}>SIGNAL &gt; SELL 0.01550452</p>
 
-      <section className="predict-cta">
+      <section className={styles.predictCta}>
         <p>
           Predict the Next Move
           <br />
           Earn AFK Time Capsule
         </p>
-        <div className="order-info">
+        <div className={styles.orderInfo}>
           <img src="/time.png" alt="time" />
           <span>
             <img src="/coin.png" alt="coin" />
@@ -123,22 +124,22 @@ export function PredictPage() {
         </div>
       </section>
 
-      <section className="action-buttons">
-        <button type="button" className="up">
+      <section className={styles.actionButtons}>
+        <button type="button" className={styles.upAction}>
           <strong>UP</strong>
           <span>5x Rewards</span>
         </button>
-        <button type="button" className="flat">
+        <button type="button" className={styles.flatAction}>
           <strong>FLAT</strong>
           <span>5x Rewards</span>
         </button>
-        <button type="button" className="down">
+        <button type="button" className={styles.downAction}>
           <strong>DOWN</strong>
           <span>5x Rewards</span>
         </button>
       </section>
 
-      <p className="predict-note">ⓘ Time capsules allow you to earn PDX points while you're AFK</p>
+      <p className={styles.predictNote}>ⓘ Time capsules allow you to earn PDX points while you're AFK</p>
     </section>
   )
 }
