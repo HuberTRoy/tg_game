@@ -12,10 +12,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --tg-bg: #e8edf6;
-  --tg-text: #0f1d35;
-  --tg-button: #1f9d73;
-  --tg-button-text: #ffffff;
 }
 
 *,
@@ -28,16 +24,14 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  color: var(--tg-text);
+  overflow-x: hidden;
+  color: #fff;
   background:
-    radial-gradient(circle at 15% 20%, #cee3ff 0%, transparent 50%),
-    radial-gradient(circle at 80% 0%, #cae8df 0%, transparent 40%),
-    var(--tg-bg);
+    linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 44%)),
+    url('/bg-game.png') center / cover no-repeat fixed;
 }
 
 #root {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px 16px;
+  display: block;
 }
